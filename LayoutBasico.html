@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño en Grid</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+    
+        .grid-container {
+            display: grid;
+            grid-template-rows: 1fr 2fr 3fr 1fr; /* Ajustado para que las filas sean más proporcionadas */
+            grid-template-columns: 1fr 1fr; /* Panel izquierdo más estrecho */
+            gap: 10px;
+            width: 80%;
+            height: 80vh;
+            background-color: #ffffff;
+        }
+    
+        /* Elementos con sus colores y posiciones */
+        .header {
+            grid-column: 1 / 3;
+            background-color: #6aa7ff; /* Azul claro */
+        }
+    
+        /* Panel izquierdo más estrecho y más largo */
+        .left-panel {
+            grid-row: 2 / 4; /* Aumentando la fila de inicio y fin para que ocupe más espacio vertical */
+            background-color: #d1d1d1; /* Gris claro */
+        }
+    
+        .top-right {
+            background-color: #57d7d6; /* Turquesa */
+            border-bottom: 5px solid #3246ff; /* Borde azul oscuro */
+            grid-column: 2 / 3; /* Ubicado en la columna de la derecha */
+            grid-row: 2 / 3;
+        }
+    
+        .bottom-right {
+            background-color: #57d7d6; /* Turquesa */
+            border-top: 5px solid #3246ff; /* Borde azul oscuro */
+            grid-column: 2 / 3; /* Ubicado en la columna de la derecha */
+            grid-row: 3 / 4;
+        }
+    
+        .center {
+            grid-column: 1 / 3;
+            background-color: #b02323;
+            grid-row: 4 / 25; /* Se asegura de que ocupe el área correcta sin afectar otras filas */
+        }
+    
+        .footer {
+            grid-column: 1 / 3;
+            background-color: #6aa7ff; /* Azul claro */
+        }
+    
+        /* Ajustes específicos de tamaño */
+        .grid-container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">Encabezado</div>
+        <div class="left-panel">Panel Izquierdo</div>
+        <div class="top-right">Superior Derecho</div>
+        <div class="bottom-right">Inferior Derecho</div>
+        <div class="center">Centro</div>
+        <div class="footer">Pie de Página</div>
+    </div>
+</body>
+</html>
